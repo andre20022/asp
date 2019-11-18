@@ -1,0 +1,27 @@
+﻿@model tcmtechyte.Models.Usuario
+@{
+    ViewBag.Title = "Resultado";
+}
+
+<h2>Resultado da Validação</h2>
+<p>@ViewBag.ver</p>
+<div class="editor-label">
+    @Html.DisplayNameFor(m => m.NomeUsuario)
+</div>
+<div class="editor-label">
+    @Html.DisplayFor(m => m.NomeUsuario)
+</div>
+<div class="editor-label">
+    @Html.DisplayNameFor(m => m.Email)
+</div>
+<div class="editor-label">
+    @Html.DisplayFor(m => m.Email)
+</div>
+<div class="editor-label">
+    @Html.DisplayNameFor(m => m.Senha)
+</div>
+<div class="editor-label">
+    @Html.DisplayFor(m => m.Senha)
+</div>
+</br>
+<p>@Html.ActionLink("Voltar","Login")</p>

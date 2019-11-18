@@ -1,0 +1,89 @@
+﻿@model tcmtechyte.Models.CadastroFunc
+@{
+    ViewBag.Title = "FuncionarioCadastro";
+}
+@if (Session["funcionarios"] == null && Session["adm"] == null)
+{
+    <h2>@Html.ActionLink("Fazer login", "Login", "Home")</h2>
+
+}
+else
+{
+
+    <h2>Cadastro de funcionario</h2>
+    @*<form action="~/Home/Login" method="post"*@
+<fieldset>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <legend>Dados do usuario</legend>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.NomeUsuario)
+        </div>
+        <div class="editor-label">
+            @Html.EditorFor(m => m.NomeUsuario)
+            @Html.ValidationMessageFor(m => m.NomeUsuario)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.SobreNome)
+        </div>
+        <div class="editor-label">
+            @Html.EditorFor(m => m.SobreNome)
+            @Html.ValidationMessageFor(m => m.SobreNome)
+        </div><div class="editor-label">
+            @Html.LabelFor(m => m.Cpf)
+        </div>
+        <div class="editor-label">
+            @Html.EditorFor(m => m.Cpf)
+            @Html.ValidationMessageFor(m => m.Cpf)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Cargo)
+        </div>
+        <div class="editor-label">
+            @Html.EditorFor(m => m.Cargo)
+            @Html.ValidationMessageFor(m => m.Cargo)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Descricao)
+        </div>
+        <div class="editor-label">
+            @Html.TextAreaFor(m => m.Descricao)
+            @Html.ValidationMessageFor(m => m.Descricao)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Email)
+        </div>
+        <div class="editor-label">
+            @Html.EditorFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Senha)
+        </div>
+        <div class="editor-label">
+            @Html.PasswordFor(m => m.Senha)
+            @Html.ValidationMessageFor(m => m.Senha)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.confirmaSenha)
+        </div>
+        <div class="editor-label">
+            @Html.PasswordFor(m => m.confirmaSenha)
+            @Html.ValidationMessageFor(m => m.confirmaSenha)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.ImagemFile)
+        </div>
+        <div class="editor-label">
+            <input type="file" name="arquivo" required />
+            @Html.ValidationMessageFor(m => m.ImagemFile)
+        </div>
+        <br />
+        <p><input type="submit" value="Logar" /></p>
+
+    }
+</fieldset>
+    @section Scripts{ @Scripts.Render("~/bundles/jqueryval") }
+    @*</form>*@
+}

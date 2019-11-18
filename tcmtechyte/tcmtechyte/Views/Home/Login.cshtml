@@ -1,0 +1,40 @@
+﻿@model tcmtechyte.Models.Usuario
+@{
+    ViewBag.Title = "Login";
+}
+<h2>Valida Login</h2>
+@*<form action="~/Home/Login" method="post"*@
+<fieldset>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <legend>Dados do usuario</legend>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.NomeUsuario)
+        </div>
+        <div class="editor-label">
+            @Html.EditorFor(m => m.NomeUsuario)
+            @Html.ValidationMessageFor(m => m.NomeUsuario)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Email)
+        </div>
+        <div class="editor-label">
+            @Html.EditorFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.Senha)
+        </div>
+        <div class="editor-label">
+            @Html.PasswordFor(m => m.Senha)
+            @Html.ValidationMessageFor(m => m.Senha)
+        </div>
+        <br />
+        <p><input type="submit" value="Logar" /></p>
+
+    }
+ </fieldset>
+@section Scripts{ @Scripts.Render("~/bundles/jqueryval") }
+   @*</form>*@
+

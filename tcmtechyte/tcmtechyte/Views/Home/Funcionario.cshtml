@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Funcionario";
+}
+
+@if (Session["funcionarios"] == null)
+{
+    <h2>@Html.ActionLink("Fazer login", "Login", "Home")</h2>
+
+}
+else
+{
+    <h1>Olá ,@Session["funcionarios"] bem vindo </h1>
+    <h2>tela do Funcionario</h2>
+    <p>@Html.ActionLink("Sair", "Logout", "Home")</p>
+}
